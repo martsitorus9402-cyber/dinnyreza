@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Slide Pesan Singkat</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: #f4f4f9;
+      font-family: Arial, sans-serif;
+    }
+    .slider {
+      width: 80%;
+      max-width: 600px;
+      padding: 20px;
+      text-align: center;
+      border-radius: 12px;
+      background: white;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      font-size: 1.3rem;
+      min-height: 100px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="slider" id="pesan">Pesan pertama...</div>
+
+  <script>
+    // Daftar pesan singkat
+    const pesanList = [
+      "haiyyy sayang ku!",
+      "aku minta maaf yah sayangku,, maaf atas ke egoisan ku 💪",
+      "aku juga tidak penah ingin seperti ini, semua di luar kendaliku 😴",
+      "maaf telah meluikai hatimu, hingga membuat ayang jadi bingung dan ragu atas hubungan ini 🙏",
+      "namun satuhal yang perlu ayang tau dan aku juga berkali-kali kali telah mengatakan bahwa aku sangat sayang padamu, melibihi diriku sendiri "
+    ];
+
+    let index = 0;
+    const pesanElement = document.getElementById("pesan");
+
+    // Fungsi untuk mengganti pesan setiap 3 detik
+    setInterval(() => {
+      index = (index + 1) % pesanList.length;
+      pesanElement.textContent = pesanList[index];
+    }, 3000);
+  </script>
+
+</body>
+</html>
